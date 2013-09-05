@@ -1,0 +1,12 @@
+what major rivers run through illinois
+(select (major (river (traverse_2 (stateid illinois:e)))))
+
+what state has the largest population density
+(select (largest_one (density_1 (state all:e))))
+
+what is the highest mountain in the us
+(select (highest (mountain (loc_2 (countryid usa:e)))))
+
+what is the population density of maine
+(select (density_1 (stateid maine:e)))
+

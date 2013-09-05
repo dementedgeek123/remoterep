@@ -1,0 +1,69 @@
+Who was the player who took highest numbr of wickets in an odi at the eden gardens
+(select name from odistats where (playername.wickets = max(wickets)) and stadium.venues = eden garden
+
+
+Name the player who has the highest average in all the matches played between south africa and india at the wanderers
+(select name from((select name,player.average from odistats where player.average = max(player.average) AND 
+(select name,player.average from teststats where player.average = max(player.average))) where player1.name = player.name
+
+
+Who won the world cup of 2003?
+(select winner from odistats where year = 2003 AND tourname = worldcup)
+
+
+Give me the test captain of australia during the worldcup of 1992?
+(select testcaptain from nations,odistats where team = austalia and tourname = 'worldcup')
+
+
+Who is the highest rungetter in the year 2001 played at the lords?
+(select name from where player.runs = max(player.runs) AND year = 2001 AND venues.stadium = lords)
+
+
+Give me the winner of ashes series of 2009?
+(select team from odistats where tourname = 'ashes' and year.odistats = 2009)
+
+
+How many runs did ganguly score in the srilanka cup held in 2010 at the dhaka stadium?
+(select runs from odistats where player.name = 'ganguly' and venues.stadium = dhaka stadium)
+
+
+How many matches have been played at the eden gardens in the year 1995?
+(select noplayed from venues where venues.stadium = 'eden gardens' AND year = '1995')
+
+
+List the number of wickets taken by all members of the indian team in 1997 at the chinnappa stadium?
+(select player1.wickets from odistats where(select name from odistats and team.name = 'india') GRUOUPBY player1.wickets))
+
+
+What is the odirank of england?
+(select odirank from nations and name.nations = 'england')
+
+
+List all of the players who have hit atleast one six at the chinnappa stadium?
+(select name from (odistats where player.sixes > 0 OR player.sixes = 1))
+
+
+How many runs did youvraj score at the firozshahakotla in the year 2011
+(select odiplayers.runs where odiplayers.name = 'yuvraj' AND venues.stadium = 'firozshahkotla' AND year = 2011)
+
+
+Give me the total number of odi matches playes by sachin?
+(select matches.odiplayers from odistats where name.odiplayers = 'sachin')
+
+
+What is the highest score in all of the odi matches that india has played at the eden gardens?
+select odistats.runs from (select max(runs) from odistats.player1) where teamname = 'india' AND venues.stadium = 'eden gardens'
+
+
+How many times did anil kumble pick 4 wickets in the worldcup of 2007?
+select odistats.wickets from odistats where (select player.wickets where odistats.player = 'anil kumble') AND odistats.tourname = 'world cup' AND year = 2007
+
+
+Who is the odi coach of south africa team?
+select coach from odistats where teamname = 'south africa'
+
+
+List the names of the players who have taken 2 or 3 wickets at the wanderers in the year 1990?
+select name from odistats.player1 from (select name from odistats.player where wickets = 2 OR select name from odistats.player where wickets = 3) AND venues.stadium = 'the wanderers' where year = '1990'
+
+

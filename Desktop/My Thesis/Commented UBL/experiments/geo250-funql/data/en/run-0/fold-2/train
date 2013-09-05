@@ -1,0 +1,5 @@
+give me the names of odiplayers of southafrica
+(select (capital (loc_2 (stateid north_dakota:e))))
+
+what is the longest river in the us
+(answer (longest (river (loc_2 (countryid usa:e)))))

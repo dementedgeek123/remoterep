@@ -1,0 +1,14 @@
+who scored the maximum number of runs in odis 
+(select (name (from (odistats (where (runs.odistats (= MAX:e)))))))
+
+what is the capital of minnesota
+(answer (capital (loc_2 (stateid minnesota:e))))
+
+what is the smallest state in india
+(answer (smallest (state (loc_2 (countryid india:e)))))
+
+what are the major cities in massachusets
+(answer (major (city (loc_2 (stateid massachusets:e)))))
+
+what is the lowest point in the us
+(answer (lowest (place (loc_2 (countryid usa:e)))))

@@ -1,0 +1,6 @@
+what major rivers run through minneapolis
+(select (major (river (traverse_2 (stateid minneapolis:e)))))
+
+what state has the lowest population density
+(select (lowest_one (density_1 (state all:e))))
+
